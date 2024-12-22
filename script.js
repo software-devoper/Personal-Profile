@@ -40,7 +40,7 @@ let rgb=()=>{
     color3=Math.random()*255;
     return `rgb(${color1},${color2},${color3})`;
 }
-setInterVal(()=>{
+setInterval(()=>{
   love.style.color=rgb();
   icons.style.color=rgb();
   Name.style.color=rgb();
