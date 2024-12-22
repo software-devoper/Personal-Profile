@@ -2,6 +2,9 @@ var tablinks=document.getElementsByClassName('tab-links');
 var tabcontents=document.getElementsByClassName('tab-cotents ');
 let icon=document.querySelector('#m');
  let msg=document.querySelector("#msg");
+let love=document.querySelector('.love');
+let icons=document.querySelector('.fa');
+let Name=document.querySelector('.name');
 function opentab(tabname){
     for(tablink of tablinks){
         tablink.classList.remove("active-link");
@@ -31,3 +34,14 @@ closeMenu.addEventListener('click', () => {
       sideMenu.classList.remove('open');
  
 });
+let rgb=()=>{
+    color1=Math.random()*255;
+    color2=Math.random()*255;
+    color3=Math.random()*255;
+    return `rgb(${color1},${color2},${color3})`;
+}
+setInterVal(()=>{
+  love.style.color=rgb();
+  icons.style.color=rgb();
+  Name.style.color=rgb();
+},1000);
