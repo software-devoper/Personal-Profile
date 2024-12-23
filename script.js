@@ -43,7 +43,7 @@ let rgb=()=>{
 setInterval(()=>{
   love.style.color=rgb();
   Name.style.color=rgb();
-  icons.forEach((item)=>{
-    item.style.color=rgb();
-  })
+  for(item of icons){
+   item.style.color=rgb();
+  }
 },1000);
