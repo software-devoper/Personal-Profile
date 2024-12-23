@@ -3,7 +3,7 @@ var tabcontents=document.getElementsByClassName('tab-cotents ');
 let icon=document.querySelector('#m');
  let msg=document.querySelector("#msg");
 let love=document.querySelector('.love');
-let icons=document.querySelector('.fa');
+let icons=document.querySelectorALL('.fa');
 let Name=document.querySelector('.name');
 function opentab(tabname){
     for(tablink of tablinks){
