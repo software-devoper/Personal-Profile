@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotate3D {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #2c3e50;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1abc9c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out, rotate3D 5s infinite linear;
+        }
+
+        .project {
+            background: linear-gradient(135deg, #ffffff, #f0f8ff);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: zoomIn 0.5s ease-in-out;
+        }
+
+        .project:hover {
+            transform: translateY(-10px) rotateY(10deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .project h2 {
+            color: #16a085;
+        }
+
+        .project p {
+            font-size: 1em;
+            color: #95a5a6;
+            margin: 10px 0 20px;
+        }
+
+        .project a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .project a:hover {
+            background-color: #c0392b;
+        }
+
+        .toggle-code {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .toggle-code:hover {
+            background-color: #2980b9;
+            transform: scale(1.1);
+        }
+
+        .code-section {
+            display: none;
+            background: #ecf0f1;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+
+        .fa-moon {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .fa-moon:hover {
+            color: #1abc9c;
+            transform: scale(1.1);
+        }
+
+        .fa-sun {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .fa-sun:hover {
+            color: yellow;
+            transform: scale(1.1);
+        }
+
+        .dark-mode {
+            background-color: #2c3e50;
+            color: #f0f8ff;
+        }
+
+        .dark-mode .project {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+
+        .dark-mode .project:hover {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+
+        .dark-mode .toggle-mode {
+            background-color: #f0f8ff;
+            color: #2c3e50;
+        }
+
+        .dark-mode .toggle-mode:hover {
+            background-color: #1abc9c;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <i onclick="toggleMode()" class="fa-solid fa-moon fa-3x" id="toggle-mode"></i>
+        <h1>My Projects</h1>
+        <div class="project">
+            <h2>Tic-Tac-Toe</h2>
+            <p>I built a Tic-Tac-Toe game where players take turns marking a 3x3 grid with "X" and "O". It checks for a
+                winner or tie and displays the result after each move using HTML, CSS, and JavaScript.</p>
+            <a href="https://software-devoper.github.io/Tic-Tac-Toe/" target="_blank">View Project</a>
+            <button class="toggle-code" onclick="toggleCode('tic-tac-toe-code')">View Code</button>
+            <div class="code-section" id="tic-tac-toe-code">
+                <p>HTML: <a href="https://github.com/software-devoper/Tic-Tac-Toe/blob/main/index.html"
+                        target="_blank">index.html</a></p>
+                <p>CSS: <a href="https://github.com/software-devoper/Tic-Tac-Toe/blob/main/style.css"
+                        target="_blank">styles.css</a></p>
+                <p>JavaScript: <a href="https://github.com/software-devoper/Tic-Tac-Toe/blob/main/script.js"
+                        target="_blank">script.js</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2>QR-Code-Generator</h2>
+            <p>I built a QR Code Generator that allows users to input text or URLs and instantly generate corresponding
+                QR codes. This tool is useful for creating scannable links for websites, contact information, or any
+                other data, making information sharing quick and efficient.</p>
+            <a href="https://software-devoper.github.io/QR-Code-generator-/" target="_blank">View Project</a>
+            <button class="toggle-code" onclick="toggleCode('qr-code-generator-code')">View Code</button>
+            <div class="code-section" id="qr-code-generator-code">
+                <p>HTML: <a href="https://github.com/software-devoper/QR-Code-generator-/blob/main/index.html"
+                        target="_blank">index.html</a></p>
+                <p>CSS: <a href="https://github.com/software-devoper/QR-Code-generator-/blob/main/style.css"
+                        target="_blank">styles.css</a></p>
+                <p>JavaScript: <a href="https://github.com/software-devoper/QR-Code-generator-/blob/main/script.js"
+                        target="_blank">script.js</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2>Calculator</h2>
+            <p>I built a calculator app that performs basic arithmetic operations such as addition, subtraction,
+                multiplication, and division. It features a clean, user-friendly interface with responsive buttons for
+                easy interaction.</p>
+            <a href="https://software-devoper.github.io/Calculator/" target="_blank">View Project</a>
+            <button class="toggle-code" onclick="toggleCode('calculator-code')">View Code</button>
+            <div class="code-section" id="calculator-code">
+                <p>HTML: <a href="https://github.com/software-devoper/Calculator/blob/main/index.html"
+                        target="_blank">index.html</a></p>
+                <p>CSS: <a href="https://github.com/software-devoper/Calculator/blob/main/style.css"
+                        target="_blank">styles.css</a></p>
+                <p>JavaScript: <a href="https://github.com/software-devoper/Calculator/blob/main/script.js"
+                        target="_blank">script.js</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2>Loader</h2>
+            <p>I created a loading animation using CSS to provide visual feedback while the application processes data.
+                It features a simple rotating spinner to keep users informed without interrupting their experience.</p>
+            <a href="https://software-devoper.github.io/Spinner/" target="_blank">View Project</a>
+            <button class="toggle-code" onclick="toggleCode('loader-code')">View Code</button>
+            <div class="code-section" id="loader-code">
+                <p>HTML: <a href="https://github.com/software-devoper/Spinner/blob/main/index.html"
+                        target="_blank">index.html</a></p>
+                <p>CSS: <a href="https://github.com/software-devoper/Spinner/blob/main/style.css"
+                        target="_blank">styles.css</a></p>
+            </div>
+        </div>
+        <div class="project">
+            <h2>Weather App</h2>
+            <p>I developed a weather app that provides real-time weather updates based on user location. It fetches data
+                from a weather API and displays details like temperature, humidity, and forecasts with an intuitive
+                interface.</p>
+            <a href="https://software-devoper.github.io/Weather/" target="_blank">View Project</a>
+            <button class="toggle-code" onclick="toggleCode('weather-code')">View Code</button>
+            <div class="code-section" id="weather-code">
+                <p>HTML: <a href="https://github.com/software-devoper/Weather/blob/main/index.html"
+                        target="_blank">index.html</a></p>
+                <p>CSS: <a href="https://github.com/software-devoper/Weather/blob/main/style.css"
+                        target="_blank">styles.css</a></p>
+                <p>JavaScript: <a href="https://github.com/software-devoper/Weather/blob/main/script.js"
+                        target="_blank">script.js</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCode(id) {
+            var codeSection = document.getElementById(id);
+            codeSection.style.display = (codeSection.style.display === "none" || codeSection.style.display === "") ? "block" : "none";
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        let toggle = document.querySelector('#toggle-mode');
+        toggle.addEventListener('click', () => {
+            if (toggle.classList.contains('fa-moon')) {
+                toggle.classList.remove('fa-moon');
+                toggle.classList.add('fa-sun');
+            }
+            else {
+                toggle.classList.remove('fa-sun');
+                toggle.classList.add('fa-moon');
+            }
+        })
+    </script>
+</body>
+
+</html>
