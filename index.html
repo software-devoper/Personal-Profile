@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+
+            <div class="header-text">
+                <p class="ui">UI/UX Designer</p>
+                <h1>Hi, I'm <span class="ex"></span><br><span class="name">Subhadip Mondal</span> from India</h1>
+                <div id="wordDisplay"></div>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container con">
+            <div class="row" id="row">
+                <div class="about-col-1 " id="col1">
+                    <img src="logo2.jpg" class="" alt="">
+                </div>
+                <div class="about-col-2" id="col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="inf">
+                        I'm a passionate web developer with a strong foundation in HTML, CSS, and JavaScript. I enjoy
+                        creating interactive and visually appealing websites that enhance user experience. Currently
+                        pursuing a BCA, I spend most of my time learning and working on personal projects like weather
+                        apps, calculators, and games. My goal is to excel in game development and create innovative
+                        solutions in the tech world. When I'm not coding, I enjoy fitness activities, especially
+                        push-ups, which keep me energized and focused. Always eager to learn and take on new challenges,
+                        I aim to grow as a developer and make a positive impact through my work.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-cotents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI?UX</span><br>Designing Web/app interfaces</li>
+                            <li><span>Web Devlopment</span><br>Web app Devlopment</li>
+                            <li><span>App Devloppment</span><br>Building Android /ios apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-cotents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>UI/UX Design Training at ET Institute</li>
+                            <li><span>2019 - 2021</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                            <li><span>2016 - 2017</span><br>Internship at ekart eCommerce</li>
+                        </ul>
+                    </div>
+                    <div class="tab-cotents" id="education">
+                        <ul>
+                            <li><span>2016</span><br>UI/UX Design Training at Et Institute</li>
+                            <li><span>2016</span><br>MBA from MIT Bangalore.</li>
+                            <li><span>2014</span><br>BBA from ISM Bangalore.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services -->
+    <div class="serv">
+        <div id="services">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Web development involves the creation and maintenance of websites and web applications. It
+                        encompasses various aspects, including web design, coding, content management, and network
+                        security configuration. Web development is typically divided into two main categories:</p>
+                    <a href="https://www.w3schools.com/">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>UI/UX design focuses on creating intuitive and visually appealing digital experiences. UI design
+                        handles the look and feel of a product, while UX design ensures it is easy to use and meets user
+                        needs. Together, they enhance user satisfaction by making interactions seamless and enjoyable
+                    </p>
+                    <a href="https://www.interaction-design.org/">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>App Design</h2>
+                    <p>App development involves creating software applications for mobile devices or desktops. It
+                        includes designing the user interface, coding the functionality, and ensuring the app runs
+                        smoothly across various platforms. The process focuses on delivering a seamless user experience
+                        and meeting specific user needs. For more information, explore</p>
+                    <a href="https://developer.apple.com/tutorials/app-dev-training/?utm_source=chatgpt.com">Learn
+                        more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- portfolio -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="work1.avif" alt="">
+                    <div class="layer">
+                        <h3>Weather App</h3>
+                        <p>I developed a weather app that provides real-time weather updates based on user location. It
+                            fetches data from a weather API and displays details like temperature, humidity, and
+                            forecasts with an intuitive interface.</p>
+                        <a href="https://software-devoper.github.io/Weather/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work2.avif" alt="">
+                    <div class="layer">
+                        <h3>Calculator</h3>
+                        <p>I built a calculator app that performs basic arithmetic operations such as addition, subtraction,
+                            multiplication, and division. It features a clean, user-friendly interface with responsive buttons for
+                            easy interaction.</p>
+                        <a href="https://software-devoper.github.io/Calculator/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work3.avif" alt="">
+                    <div class="layer">
+                        <h3>QR-Code-Generator</h3>
+                        <p>I built a QR Code Generator that allows users to input text or URLs and instantly generate corresponding
+                            QR codes. This tool is useful for creating scannable links for websites, contact information, or any
+                            other data, making information sharing quick and efficient.</p>
+                        <a href="https://software-devoper.github.io/QR-Code-generator-/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pro">
+            <a href="projects.html" class="btn">See all projects</a>
+        </div>
+        </div>
+    </div>
+    <!-- contact -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p class="h"><i class="fa-solid fa-paper-plane f"></i>subhadipmondal0101@gmail.com</p>
+                    <p class="h"><i class="fa-solid fa-square-phone f"></i>(+91) 8972594871</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100074545299729&mibextid=kFxxJD"><i
+                                class="fa-brands fa-facebook fa "></i></a>
+                        <a href="https://github.com/software-devoper/web-devloper.git"><i
+                                class="fa-brands fa-github fa"></i></a>
+                        <a
+                            href="https://www.instagram.com/subhadipmondal0101?igsh=MTd2YWl2Zjk5ZWd0Ng==&utm_source=ig_contact_invite "><i
+                                class="fa-brands fa-square-instagram fa "></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin fa"></i></a>
+                    </div>
+                    <div class="cv">
+                    <a href="Cv.pdf" download class="btn btn2">Downlod CV</a>
+                </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet" class="fr">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="Email" id="" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <div class="sub">
+                        <button type="Submit" class="btn btn2">Submit</button>
+                    </div>
+                    </form>
+                    <div id="msg"></div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @Mondal made with <i class="fa-solid fa-heart love"></i> by Subhadip Mondal</p>
+        </div>
+    </div>
+    <nav>
+        <span class="logo">Coding</span>
+        <ul class="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-square-xmark fa-3x closeMenu " id="m"></i>
+        </ul>
+        <i class="fa-solid fa-bars  menuToggle"></i>
+    </nav>
+</body>
+<script src="script.js"></script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzb7Gxjqgg3x_52Oh_-2a-V8vuztNGtlCnsp205r9K9ZoL6S3lcBJumuyhbePPAnGpJ/exec';
+    const form = document.forms['submit-to-google-sheet'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerText = "Message sent successfully";
+                setTimeout(() => {
+                    msg.innerText = " ";
+                }, 5000);
+                form.reset();
+            }
+            )
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</html>
