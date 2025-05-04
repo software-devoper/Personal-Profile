@@ -69,9 +69,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
+            background-color: #dae6e4;
             color: #2c3e50;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeInDown 5s ease-in-out;
         }
 
         .container {
@@ -158,6 +158,7 @@
             animation: fadeInUp 0.5s ease-in-out;
         }
 
+        /* 
         .fa-moon {
             padding: 10px 20px;
             border: none;
@@ -166,26 +167,16 @@
             font-weight: bold;
             margin-bottom: 20px;
             transition: color 0.3s, transform 0.3s;
-        }
+        } */
 
         .fa-moon:hover {
-            color: #1abc9c;
-            transform: scale(1.1);
-        }
-
-        .fa-sun {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-bottom: 20px;
-            transition: color 0.3s, transform 0.3s;
+            color: #0ac9a9;
+            /* transform: scale(1.1); */
         }
 
         .fa-sun:hover {
             color: yellow;
-            transform: scale(1.1);
+            /* transform: scale(1.1); */
         }
 
         .dark-mode {
@@ -193,11 +184,11 @@
             color: #f0f8ff;
         }
 
-        .dark-mode .project {
+        .project1 {
             background: linear-gradient(135deg, #2c3e50, #34495e);
         }
 
-        .dark-mode .project:hover {
+        .project1:hover {
             background: linear-gradient(135deg, #34495e, #2c3e50);
         }
 
@@ -210,12 +201,62 @@
             background-color: #1abc9c;
             color: #ffffff;
         }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .toggle {
+            height: 90%;
+            width: 5%;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .theme {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #moon {
+            color: #a9b1b1;
+        }
+
+        .th {
+            height: 40px;
+            width: 100vw;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            margin-top: 22px;
+            position: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .toggle {
+                width: 15%;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="th">
+        <div class="toggle">
+            <div class="theme">
+                <i id="moon" class="fa-solid fa-moon fa-3x"></i>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <i onclick="toggleMode()" class="fa-solid fa-moon fa-3x" id="toggle-mode"></i>
         <h1>My Projects</h1>
         <div class="project">
             <h2>Tic-Tac-Toe</h2>
@@ -293,7 +334,7 @@
                         target="_blank">script.js</a></p>
             </div>
         </div>
-         <div class="project">
+        <div class="project">
             <h2>Age Calculator</h2>
             <p>
                 I created an Age Calculator using HTML, CSS, and JavaScript. It allows users to input their date of
@@ -332,6 +373,26 @@
                         target="_blank">script.js</a></p>
             </div>
         </div>
+        <div class="project">
+            <h2>Music-App</h2>
+            <p> I built a Music Player App using HTML, CSS, and JavaScript. The app fetches songs directly from the
+                device storage and lets users play them smoothly. It features a simple interface, making it easy to
+                navigate and enjoy music. Users can play, pause, and switch tracks effortlessly. It's a fun project to
+                practice working with file storage, media playback, and UI design. 🎵🎧</p>
+            <a href="https://software-devoper.github.io/Music-App/" target="_blank">View Project</a>
+            <button class="toggle-code" onclick="toggleCode('Music-App')">View Code</button>
+            <div class="code-section" id="Music-App">
+                <p>HTML: <a
+                        href="https://github.com/software-devoper/Music-App/blob/8ba444b6f07c1a66d302bcb58e102e2b12714812/index.html"
+                        target="_blank">index.html</a></p>
+                <p>CSS: <a
+                        href="https://github.com/software-devoper/Music-App/blob/8ba444b6f07c1a66d302bcb58e102e2b12714812/spotify.css"
+                        target="_blank">styles.css</a></p>
+                <p>JavaScript: <a
+                        href="https://github.com/software-devoper/Music-App/blob/8ba444b6f07c1a66d302bcb58e102e2b12714812/script.js"
+                        target="_blank">script.js</a></p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -340,21 +401,36 @@
             codeSection.style.display = (codeSection.style.display === "none" || codeSection.style.display === "") ? "block" : "none";
         }
 
-        function toggleMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-        let toggle = document.querySelector('#toggle-mode');
+        let toggle = document.querySelector('.toggle');
+        let theme = document.querySelector('.theme');
+        let body = document.querySelector('body');
+        let sun = document.querySelector('#moon');
+        let project = document.querySelectorAll('.project');
+        let tog = 1;
         toggle.addEventListener('click', () => {
-            if (toggle.classList.contains('fa-moon')) {
-                toggle.classList.remove('fa-moon');
-                toggle.classList.add('fa-sun');
+            if (tog == 1) {
+                tog = 2;
+                body.style.backgroundColor = ' #2c3e50';
+                project.forEach((item) => {
+                    item.classList.add('project1');
+                })
+                sun.classList.add('fa-sun');
+                sun.classList.remove('fa-moon');
+                sun.style.color = 'rgb(29 50 71)';
             }
             else {
-                toggle.classList.remove('fa-sun');
-                toggle.classList.add('fa-moon');
+                tog = 1;
+                body.style.backgroundColor = '#dae6e4';
+                project.forEach((item) => {
+                    item.classList.remove('project1');
+                })
+                sun.classList.add('fa-moon');
+                sun.classList.remove('fa-sun');
+                sun.style.color = '#a9b1b1';
             }
         })
     </script>
+
 </body>
 
 </html>
