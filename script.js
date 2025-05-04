@@ -1,36 +1,36 @@
 var tablinks = document.getElementsByClassName('tab-links');
 var tabcontents = document.getElementsByClassName('tab-cotents ');
-let icon = document.querySelector('#m');
-let msg = document.querySelector("#msg");
 let icons = document.querySelectorAll('.fa');
 let love = document.querySelector('.love');
-function opentab(tabname) {
-    for (tablink of tablinks) {
-        tablink.classList.remove("active-link");
-    }
-    for (tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add('active-link');
-    document.getElementById(tabname).classList.add("active-tab");
-}
-const menuToggle = document.querySelector('.menuToggle ');
-const closeMenu = document.querySelector('.closeMenu');
-const sideMenu = document.querySelector('.sidemenu');
-menuToggle.addEventListener('click', () => {
-    //    sideMenu.style.display='block';
-    sideMenu.style.display = 'flex';
-    sideMenu.classList.add('open');
-});
-sideMenu.addEventListener('click', () => {
-    sideMenu.classList.remove('open');
-})
-closeMenu.addEventListener('click', () => {
-    //   sideMenu.style.display='none';
-    sideMenu.classList.remove('open');
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    const menuIcon = document.getElementById("menuIcon");
 
-});
-let name = document.querySelector('.ex');
+  
+    navLinks.classList.toggle("active");
+  
+    // Toggle icon
+    if (navLinks.classList.contains("active")) {
+      menuIcon.textContent = "✕"; // Cross icon
+    } else {
+      menuIcon.textContent = "☰"; // Hamburger icon
+    }
+  }
+  
+  // Close menu when any link is clicked (for small screens)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.getElementById("navLinks");
+      const menuIcon = document.getElementById("menuIcon");
+  
+      if (navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        menuIcon.textContent = "☰";
+      }
+    });
+  });
+
+  let name = document.querySelector('.ex');
 let wordChange = () => {
     let random = Math.ceil(Math.random() * 5);
     switch (random) {
@@ -59,10 +59,21 @@ let rgb = () => {
     return `rgb(${color1},${color2},${color3})`;
 }
 setInterval(() => {
-    love.style.color = rgb();
     name.style.color = rgb();
+    love.style.color = rgb();
     icons.forEach((item) => {
         item.style.color = rgb();
     })
     wordChange()
 }, 1000);
+
+function opentab(tabname) {
+  for (tablink of tablinks) {
+      tablink.classList.remove("active-link");
+  }
+  for (tabcontent of tabcontents) {
+      tabcontent.classList.remove("active-tab");
+  }
+  event.currentTarget.classList.add('active-link');
+  document.getElementById(tabname).classList.add("active-tab");
+}
